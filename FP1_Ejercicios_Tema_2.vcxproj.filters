@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="conversionSegundos_Ejercicio_4.cpp">
+    <ClCompile Include="FP1EjerciciosTema2.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
