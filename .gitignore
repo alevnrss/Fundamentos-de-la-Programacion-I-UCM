@@ -1,0 +1,20 @@
+# Carpetas de Visual Studio
+.vs/
+Debug/
+Release/
+x64/
+x86/
+
+# Archivos de usuario
+*.user
+*.suo
+*.vcxproj.user
+
+# Archivos temporales y de compilación
+*.obj
+*.exe
+*.log
+*.ipch
+*.cache
+*.pdb
+*.ilk
