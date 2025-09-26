@@ -3,7 +3,7 @@ using namespace std;
 
 // Función conversionSegundos()
 // Ejercicio 4: Escribe un programa que lea el teclado un tiempo en segundos y que muestre por pantalla -> horas, minutos y segundos.
-int conversionSegundos()
+void conversionSegundos()
 {
     cout << "EJERCICIO 4 . CONVERSION SEGUNDOS A HORAS, MINUTOS, SEGUNDOS. " << endl;
     
@@ -17,12 +17,11 @@ int conversionSegundos()
     
     cout << "El valor de -> " << segundosIntroducidos << " segundos iniciales son: " << endl << horas << " horas " << minutos << " minutos " << segundos << " segundos." << endl;
     cout << "" << endl;
-    return 0;
 }
 
 // Función productoOperandos()
 // Ejercicio 4.1: Desarrolla un programa que multiplique 2 numeros ENTEROS introducidos por consola y que muestre su productor por pantalla.
-int productoOperandos() 
+void productoOperandos() 
 {
     cout << "EJERCICIO 4.1 . PRODUCTO DE OPERANDOS. " << endl;
 
@@ -37,15 +36,13 @@ int productoOperandos()
 
     cout << "El producto de los dos numeros enteros introducidos son: " << x << " x " << y << " = " << productoOperandos << endl;
     cout << "" << endl;
-
-    return 0;
 }
 
 // Funcion notaFinal()
 // Ejercicio 5: Desarrolla un programa que calcule la nota final de una asignatura de la convocatoria ordinaria a partir de:
 // nota del examen (60%), nota del proyecto (20%), actividades adicionales (20%), cada una con sus respectivos porcentajes.
 // El programa pedira al usuario sus notas, luego cualquier nota inferior a 5 no se tomara en cuenta.
-int notaFinal() 
+void notaFinal() 
 {
     cout << "EJERCICIO 5. CALCULADORA DE NOTA FINAL ORDINARIA. " << endl;
 
@@ -72,12 +69,51 @@ int notaFinal()
         << "por tanto, la NOTA FINAL es: " << notaFinal;
     cout << "" << endl;
 
-    return 0;
+   
 }
 
+// Funcion expresionMatematica()
+// Ejercicio 6: Escribe la siguiente expresión en C++ usando los parentesis que sean estrictamente necesarios.
+// 4/3(r + 34) - 9(a + bc) + 3+d(2+a)/a+bd
+void expresionMatematica() {
+
+    cout << "EJERCICIO 6. FORMULA MATEMATICA. " << endl;
+    
+    double a = 0, b = 0, c = 0, d = 0, r = 0;
+    double expresionMatematica = 0 ;
+    
+    cout << "Ingrese un valor para a: ";
+    cin >> a;
+    cout << "Ingrese un valor para b: ";
+    cin >> b;
+    cout << "Ingrese un valor para c: ";
+    cin >> c;
+    cout << "Ingrese un valor para d: ";
+    cin >> d;
+    cout << "Ingrese un valor para r: ";
+    cin >> r;
+
+    double primeraFormula = (4.0 / (3.0 * (r + 34)));
+    double segundaFormula = (9.0 * (a + (b * c)));
+    double terceraFormula = (3.0 + (d * (2 + a)) / (a + (b * d)));
+    
+    if ( 3.0*(r+34) != 0 || (a + (b * d))!=0)
+    {
+        expresionMatematica = primeraFormula - segundaFormula + terceraFormula;
+        cout << "El resultado de la formula matemática es: " << expresionMatematica ;
+    }
+    else
+    {
+        cout << "El denominador es 0 por lo tanto no se puede realizar la formula ya que un numero dividido entre 0 no es posible";
+    }
+
+}
+
+
 int main() {
-    conversionSegundos();
-    productoOperandos();
-    notaFinal();
+    // conversionSegundos();
+    // productoOperandos();
+    // notaFinal();
+    expresionMatematica();
     return 0;
 }
