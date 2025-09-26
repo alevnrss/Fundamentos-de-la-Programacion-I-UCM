@@ -126,11 +126,32 @@ void formulaMatematica() {
     cout << "El resultado de F es : " << variableF << endl;
 }
 
+// Funcion nominaEmpreado()
+/**
+    Ejercicio 8: Escribe un programa en C++ que calcule el total que hay que ingresar a un empleado en su nomina del mes actual.
+    Nomina se calcula a partir de: sueldo base, complemento de destino, complemento de cargo académico, horas extras realizadas,
+    número de hijos, número de mayores dependientes.
+
+    TOTAL A INGRESAR = SUELDO BRUTO - IMPUESTOS
+    SUELDO BRUTO = SUELDO BASE + COMPLEMENTOS + HORAS EXTRA (23€ x HORA EXTRA)
+    IMPUESTOS(IRPF) = PORCENTAJE DEL SUELDO BRUTO -> (SIN HIJOS && SIN MAYORES = SE APLICA UN 24%), (AL 24% SE LE RESTARÁ 2 POR HIJO, 1 POR MAYOR)
+*/
+void nominaEmpleado() {
+    
+    cout << "EJERCICIO 8. Calculo de nómina a ingresar del empleado" << endl;
+
+    double sueldoBase, complementoDestino, complementoAcademico, sueldoBruto, porcentajeInicialIRPF = 0.24, retencionIRPF, sueldoNeto;
+    int horasExtra = 0, hijos = 0, mayores = 0;
+
+    cout << "Por favor, ingrese los datos necesarios para poder realizar el calculo de la nómina";
+    
+
+}
 int main() {
     // conversionSegundos();
     // productoOperandos();
     // notaFinal();
     // expresionMatematica();
-    formulaMatematica();
+    // formulaMatematica();
     return 0;
 }
