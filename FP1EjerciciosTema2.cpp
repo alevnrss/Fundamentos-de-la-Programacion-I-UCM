@@ -68,8 +68,6 @@ void notaFinal()
         << "NOTA ACTIVIDADES: " << notaActividadesAdicionales << endl
         << "por tanto, la NOTA FINAL es: " << notaFinal;
     cout << "" << endl;
-
-   
 }
 
 // Funcion expresionMatematica()
@@ -100,20 +98,39 @@ void expresionMatematica() {
     if ( 3.0*(r+34) != 0 || (a + (b * d))!=0)
     {
         expresionMatematica = primeraFormula - segundaFormula + terceraFormula;
-        cout << "El resultado de la formula matemática es: " << expresionMatematica ;
+        cout << "El resultado de la formula matemática es: " << expresionMatematica << endl;
     }
     else
     {
         cout << "El denominador es 0 por lo tanto no se puede realizar la formula ya que un numero dividido entre 0 no es posible";
     }
-
 }
 
+// Funcion formulaMatematicaLambda()
+// Ejercicio 7: Escribe un programa que calculará el valor de F, ademas terminará mostrando los valores de las distintas 
+// variables (UNA EN CADA LINEA) y el valor de F. Variable entera = int Variable real = double.
+void formulaMatematica() {
+    
+    cout << "EJERCICIO 7. FORMULA LAMBDA, SIGMA, ALFA. " << endl;
+
+    int x = 12, y = 3;
+    double sigma = 2.1836, lambda = 1.11695, alfa = 328.67, variableF = 0.0;
+    double primeraParteFormula = (3.0 * ((x + (sigma * y))/((x * x) - (y * y))));
+    double segundaParteFormula = (lambda * (alfa - 13.7));
+    variableF = primeraParteFormula - segundaParteFormula;
+    cout << "x = " << x << endl;
+    cout << "y = " << y << endl;
+    cout << "sigma = " << sigma << endl;
+    cout << "lambda = " << lambda << endl;
+    cout << "alfa = " << alfa << endl;
+    cout << "El resultado de F es : " << variableF << endl;
+}
 
 int main() {
     // conversionSegundos();
     // productoOperandos();
     // notaFinal();
-    expresionMatematica();
+    // expresionMatematica();
+    formulaMatematica();
     return 0;
 }
