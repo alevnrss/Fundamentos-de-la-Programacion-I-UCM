@@ -132,7 +132,7 @@ void formulaMatematica() {
     Nomina se calcula a partir de: sueldo base, complemento de destino, complemento de cargo académico, horas extras realizadas,
     número de hijos, número de mayores dependientes.
 
-    TOTAL A INGRESAR = SUELDO BRUTO - IMPUESTOS
+    SUELDO NETO = SUELDO BRUTO - IMPUESTOS
     SUELDO BRUTO = SUELDO BASE + COMPLEMENTOS + HORAS EXTRA (23€ x HORA EXTRA)
     IMPUESTOS(IRPF) = PORCENTAJE DEL SUELDO BRUTO -> (SIN HIJOS && SIN MAYORES = SE APLICA UN 24%), (AL 24% SE LE RESTARÁ 2 POR HIJO, 1 POR MAYOR)
 */
@@ -140,18 +140,93 @@ void nominaEmpleado() {
     
     cout << "EJERCICIO 8. Calculo de nómina a ingresar del empleado" << endl;
 
-    double sueldoBase, complementoDestino, complementoAcademico, sueldoBruto, porcentajeInicialIRPF = 0.24, retencionIRPF, sueldoNeto;
-    int horasExtra = 0, hijos = 0, mayores = 0;
+    // Inicializacion de variables
+    double sueldoBase = 0, complementoDestino = 0, complementoAcademico = 0, sueldoBruto = 0, porcentajeInicialIRPF = 0.24, porcentajeFinalIRPF = 0, retencionIRPF = 0, sueldoNeto = 0, descuentoAdicional = 0;
+    double horasExtra = 0, hijos = 0, mayores = 0;
 
-    cout << "Por favor, ingrese los datos necesarios para poder realizar el calculo de la nómina";
+    cout << "Por favor, ingrese los datos necesarios para poder realizar el calculo de la nomina" << endl;
+    cout << "Sueldo Base: ";
+    cin >> sueldoBase;
+    cout << "Complemento Destino: ";
+    cin >> complementoDestino;
+    cout << "Complemento Academico: ";
+    cin >> complementoAcademico;
+    cout << "horas extra realizadas: ";
+    cin >> horasExtra;
+    cout << "Total de hijos: ";
+    cin >> hijos;
+    cout << "Total de mayores: ";
+    cin >> mayores;
+
+    // Calculo del sueldo Bruto
+    sueldoBruto = sueldoBase + complementoDestino + complementoAcademico + (horasExtra * 25) ;
+
+    // Calculo de IRPF
+    if (hijos > 0 && mayores > 0 ) 
+    {
+        hijos = hijos * 0.02;
+        mayores = mayores * 0.01;
+
+        descuentoAdicional = hijos + mayores;
+
+        porcentajeFinalIRPF = porcentajeInicialIRPF - hijos - mayores; 
+        retencionIRPF = sueldoBruto * porcentajeFinalIRPF;
+        sueldoNeto = sueldoBruto - retencionIRPF;
+
+        cout << "TOTAL A INGRESAR A EMPLEADO ESTE MES: " << endl;
+        cout << "Sueldo base: " << sueldoBase << " EUROS" << endl;
+        cout << "Complemento de destino: " << complementoDestino << " EUROS" << endl;
+        cout << "Complemento de cargo academico: " << complementoAcademico << " EUROS" << endl;
+        cout << "Horas extra realizadas: " << horasExtra << " horas" << endl;
+        cout << "Hijos: " << hijos << endl;
+        cout << "Mayores: " << mayores << endl;
+        cout << "---------------------------------------------" << endl;
+        cout << "CALCULO DE LA NOMINA SEGUN DATOS INGRESADOS: " << endl;
+        cout << "Sueldo Bruto = " << sueldoBruto << " EUROS" << endl;
+        cout << "Porcentaje de IRPF = " << porcentajeFinalIRPF << " %" << endl;
+        cout << "Retencion por IRPF = " << retencionIRPF << " EUROS" << endl;
+        cout << "Sueldo neto = " << sueldoNeto << " EUROS" << endl;
+        cout << "Descuento por hijos = " << hijos << endl;
+        cout << "Descuento por mayores = " << mayores << endl; 
+        cout << "Descuento Final Adicional por hijos y mayores: " << descuentoAdicional;
+    }
+    else
+    {
+        porcentajeFinalIRPF = porcentajeInicialIRPF;
+        retencionIRPF = sueldoBruto * porcentajeFinalIRPF;
+        sueldoNeto = sueldoBruto - retencionIRPF;
+
+        cout << "TOTAL A INGRESAR A EMPLEADO ESTE MES: " << endl;
+        cout << "Sueldo base: "<< sueldoBase << " EUROS" << endl;
+        cout << "Complemento de destino: "<< complementoDestino << " EUROS" << endl;
+        cout << "Complemento de cargo academico: " << complementoAcademico << " EUROS" << endl;
+        cout << "Horas extra realizadas: " << horasExtra << " horas" << endl;
+        cout << "Hijos: "<< hijos << endl;
+        cout << "Mayores: " << mayores << endl;
+        cout << "---------------------------------------------" << endl;
+        cout << "CALCULO DE LA NOMINA SEGUN DATOS INGRESADOS: " << endl;
+        cout << "Sueldo Bruto = "<< sueldoBruto << " EUROS" << endl;
+        cout << "Porcentaje de IRPF = " << porcentajeFinalIRPF << " %" << endl;
+        cout << "Retencion por IRPF = " << retencionIRPF << " EUROS" << endl;
+        cout << "Sueldo neto = " << sueldoNeto << " EUROS";
+    }
+}
+
+/**
+    Ejercicio de clase : 26/09/25 
+    Realizar un programa que realice la operación del trinomio al cuadrado, teniendo en cuenta las diferentes opciones.
+*/
+void ecuacionTrinomioCuadrado() {
     
 
 }
+
 int main() {
     // conversionSegundos();
     // productoOperandos();
     // notaFinal();
     // expresionMatematica();
     // formulaMatematica();
+    nominaEmpleado();
     return 0;
 }
